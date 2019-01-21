@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS封装DEMO</title>
+    <script type="text/javascript" src="js.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('.main').html('<p data-id="pid"></p>')
+                .attr('data-id', 'mid')
+                .addClass('abc')
+                .addClass('aaa')
+                .removeClass('abc');
+
+            $('#title').text('Hello World.');
+
+            $('div').html($('p').attr('data-id'));
+
+            $('div').removeAttr('data-id');
+
+            $('input').val('ccc');
+
+            console.log($.isEmptyObject(['a']));
+
+            $('div').on('click', function (e) {
+                alert($(this).html());
+                console.log(e);
+            });
+
+            $('div').each(function (i, v) {
+                console.log('obj', i, v);
+            });
+
+            $.each(['a', 'b', 'c'], function (i, v) {
+                console.log('array', i, v);
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+
+<div id="title">标题</div>
+<div class="main"></div>
+<div class="main"></div>
+<div class="main"></div>
+
+<input type="text" id="txt" value="123">
+
+
+</body>
+</html>
